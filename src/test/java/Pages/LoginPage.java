@@ -12,6 +12,7 @@ public class LoginPage extends BaseTest {
         PageFactory.initElements (driver, this);
     }
 
+// Login to your account elements
 @FindBy (name="email")
     public WebElement emailAddressField;
 

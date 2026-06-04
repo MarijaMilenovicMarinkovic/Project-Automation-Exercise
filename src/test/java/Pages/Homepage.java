@@ -61,4 +61,15 @@ public class Homepage extends BaseTest {
 public void deleteAccount () {
     deleteAccountButton.click();
 }
+
+//------------------------------------------------
+
+    //Cart Icon
+@FindBy (linkText="Cart")
+    public WebElement cartIcon;
+
+public void clickOnCartIcon () {
+    cartIcon.click();
+}
+
 }

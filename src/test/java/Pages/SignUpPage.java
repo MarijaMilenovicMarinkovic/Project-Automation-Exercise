@@ -19,7 +19,8 @@ public class SignUpPage extends BaseTest {
 @FindBy(id="name")
     public WebElement nameFieldSignUp;
 
-
+    @FindBy(xpath = "//*[contains(text(),'Email Address already exist')]")
+    public WebElement emailAlreadyExistsMessage;
 
 
 }

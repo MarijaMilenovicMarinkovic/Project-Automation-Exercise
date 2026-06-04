@@ -1,10 +1,9 @@
 package Tests;
 
 import Base.BaseTest;
+import Pages.CartPage;
 import Pages.Homepage;
 import Pages.LoginPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -13,36 +12,31 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LoginTest extends BaseTest {
+public class EmptyCartTest extends BaseTest {
+
     @BeforeMethod
 
     public void pageSetUp() {
-        driver= new ChromeDriver ();
+        driver= new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.navigate().to("https://automationexercise.com/");
         loginPage=new LoginPage();
         homepage=new Homepage();
-
+        cartPage=new CartPage();
     }
 
-    @Test (priority =1)
-            public void LoginWithValidCredentials() {
-    homepage.clickOnSignupLoginButton ();
-    loginPage.userLogsIn("joka@gmail.com", "joka456");
+    @Test
+    public void verifyCartIsEmpty () {
+homepage.clickOnCartIcon();
+        Assert.assertTrue(cartPage.emptyCartMessage.getText().contains("empty"));
 
-        WebElement logoutButton = driver.findElement(By.linkText("Logout"));
-     Assert.assertTrue(logoutButton.isDisplayed());
-
-     WebElement deleteButton = driver.findElement(By.linkText("Delete Account"));
-      Assert.assertTrue(deleteButton.isDisplayed());
     }
 
 
 
     @AfterMethod
-      public void tearDown() {
-    driver.quit();
+    public void tearDown () {
+        driver.quit();
     }
-
 }

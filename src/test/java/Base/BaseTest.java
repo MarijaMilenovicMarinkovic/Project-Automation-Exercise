@@ -1,9 +1,6 @@
 package Base;
 
-import Pages.DeletedUserPage;
-import Pages.Homepage;
-import Pages.LoginPage;
-import Pages.SignUpPage;
+import Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,7 +14,7 @@ public LoginPage loginPage;
 public WebDriverWait wait;
 public SignUpPage signUpPage;
 public DeletedUserPage deletedUserPage;
-
+public CartPage cartPage;
 
 
 @BeforeClass
