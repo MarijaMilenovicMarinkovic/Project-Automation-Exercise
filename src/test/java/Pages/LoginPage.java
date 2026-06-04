@@ -37,6 +37,29 @@ public void userLogsIn (String email, String password){
     public void UserClicksOnLoginButton(){
         loginButton.click();}
 
+//-------------------------------------------------------------------------------
 
+    //New User SignUp! elements
+
+@FindBy (css= "input[data-qa='signup-name']")
+    public WebElement nameField;
+
+@FindBy (name="email")
+    public WebElement emailAddressForSignUp;
+@FindBy (css="button[data-qa='signup-button']")
+    public WebElement signupButton;
+
+public void inputName (String name){
+    nameField.clear();
+    nameField.sendKeys(name);
+}
+public void inputEmailForSignup (String email) {
+    emailAddressForSignUp.clear();
+    emailAddressForSignUp.sendKeys(email);
+}
+
+public void clickOnSignupButton () {
+    signupButton.click();
+}
 
 }

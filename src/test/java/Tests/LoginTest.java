@@ -38,8 +38,8 @@ public class LoginTest extends BaseTest {
       Assert.assertTrue(deleteButton.isDisplayed());
     }
 
-    @Test (priority=2)
-    public void
+   //@Test (priority=2)
+   // public void
 
     @AfterMethod
       public void tearDown() {
